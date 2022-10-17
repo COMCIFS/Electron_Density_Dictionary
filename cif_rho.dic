@@ -12,9 +12,13 @@ data_CIF_RHO
 
     _dictionary.title             Cif_rho
     _dictionary.class             Instance
-    _dictionary.version           2.00.01
-    _dictionary.date              2019-04-01
-    _dictionary.uri               www.iucr.org/cif/dic/cif_rho.dic
+    _dictionary.version           2.0.3
+    _dictionary.date              2022-10-17
+    _dictionary.uri
+;\
+https://raw.githubusercontent.com/COMCIFS/Electron_Density_\
+Dictionary/master/cif_rho.dic
+;
     _dictionary.ddl_conformance   3.13.1
     _dictionary.namespace         CifRho
     _description.text
@@ -29,7 +33,7 @@ save_RHO_GROUP
     _definition.id                RHO_GROUP
     _definition.scope             Category
     _definition.class             Head
-    _definition.update            2014-06-20
+    _definition.update            2022-10-17
     _description.text
 ;
     Groups all of the categories of definitions in the study of
@@ -37,6 +41,9 @@ save_RHO_GROUP
 ;
     _name.category_id             CIF_RHO
     _name.object_id               RHO_GROUP
+
+    _import.get
+        [{'dupl':Ignore  'file':cif_core.dic  'mode':Full  'save':CIF_CORE}]
 
 save_
 
@@ -119,7 +126,7 @@ save_atom_local_axes.atom0
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -139,7 +146,7 @@ save_atom_local_axes.atom1
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -159,7 +166,7 @@ save_atom_local_axes.atom2
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -180,7 +187,7 @@ save_atom_local_axes.atom_label
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -344,7 +351,7 @@ save_atom_rho_multipole.atom_label
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -530,9 +537,10 @@ save_atom_rho_multipole.scat_core_table
     _name.object_id               scat_core_table
     _type.purpose                 Number
     _type.source                  Assigned
-    _type.container               Table
+    _type.container               Array
     _type.dimension               '[]'
     _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -602,9 +610,10 @@ save_atom_rho_multipole.scat_valence_table
     _name.object_id               scat_valence_table
     _type.purpose                 Number
     _type.source                  Assigned
-    _type.container               Table
+    _type.container               Array
     _type.dimension               '[]'
     _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -717,6 +726,7 @@ save_atom_rho_multipole_coeff.list
     _type.container               List
     _type.dimension               '[27]'
     _type.contents                Real
+    _units.code                   none
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -731,6 +741,26 @@ save_atom_rho_multipole_coeff.list
 
 save_
 
+save_atom_rho_multipole_coeff.list_su
+
+    _definition.id                '_atom_rho_multipole_coeff.list_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.list.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               list_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.list'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[27]'
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
 save_atom_rho_multipole_coeff.p00
 
     _definition.id                '_atom_rho_multipole_coeff.P00'
@@ -739,6 +769,23 @@ save_atom_rho_multipole_coeff.p00
     _name.object_id               P00
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_coeff}]
+
+save_
+
+save_atom_rho_multipole_coeff.p00_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P00_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P00.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P00_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P00'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -753,6 +800,23 @@ save_atom_rho_multipole_coeff.p10
 
 save_
 
+save_atom_rho_multipole_coeff.p10_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P10_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P10.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P10_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P10'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_coeff.p11
 
     _definition.id                '_atom_rho_multipole_coeff.P11'
@@ -761,6 +825,23 @@ save_atom_rho_multipole_coeff.p11
     _name.object_id               P11
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_coeff}]
+
+save_
+
+save_atom_rho_multipole_coeff.p11_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P11_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P11.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P11_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P11'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -780,6 +861,23 @@ save_atom_rho_multipole_coeff.p1_1
 
 save_
 
+save_atom_rho_multipole_coeff.p1_1_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P1_1_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P1_1.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P1_1_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P1_1'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_coeff.p20
 
     _definition.id                '_atom_rho_multipole_coeff.P20'
@@ -788,6 +886,23 @@ save_atom_rho_multipole_coeff.p20
     _name.object_id               P20
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_coeff}]
+
+save_
+
+save_atom_rho_multipole_coeff.p20_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P20_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P20.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P20_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P20'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -802,6 +917,23 @@ save_atom_rho_multipole_coeff.p21
 
 save_
 
+save_atom_rho_multipole_coeff.p21_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P21_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P21.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P21_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P21'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_coeff.p22
 
     _definition.id                '_atom_rho_multipole_coeff.P22'
@@ -810,6 +942,23 @@ save_atom_rho_multipole_coeff.p22
     _name.object_id               P22
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_coeff}]
+
+save_
+
+save_atom_rho_multipole_coeff.p22_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P22_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P22.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P22_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P22'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -829,6 +978,23 @@ save_atom_rho_multipole_coeff.p2_1
 
 save_
 
+save_atom_rho_multipole_coeff.p2_1_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P2_1_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P2_1.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P2_1_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P2_1'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_coeff.p2_2
 
     _definition.id                '_atom_rho_multipole_coeff.P2_2'
@@ -845,6 +1011,23 @@ save_atom_rho_multipole_coeff.p2_2
 
 save_
 
+save_atom_rho_multipole_coeff.p2_2_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P2_2_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P2_2.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P2_2_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P2_2'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_coeff.p30
 
     _definition.id                '_atom_rho_multipole_coeff.P30'
@@ -853,6 +1036,23 @@ save_atom_rho_multipole_coeff.p30
     _name.object_id               P30
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_coeff}]
+
+save_
+
+save_atom_rho_multipole_coeff.p30_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P30_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P30.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P30_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P30'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -867,6 +1067,23 @@ save_atom_rho_multipole_coeff.p31
 
 save_
 
+save_atom_rho_multipole_coeff.p31_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P31_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P31.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P31_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P31'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_coeff.p32
 
     _definition.id                '_atom_rho_multipole_coeff.P32'
@@ -878,6 +1095,23 @@ save_atom_rho_multipole_coeff.p32
 
 save_
 
+save_atom_rho_multipole_coeff.p32_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P32_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P32.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P32_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P32'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_coeff.p33
 
     _definition.id                '_atom_rho_multipole_coeff.P33'
@@ -886,6 +1120,23 @@ save_atom_rho_multipole_coeff.p33
     _name.object_id               P33
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_coeff}]
+
+save_
+
+save_atom_rho_multipole_coeff.p33_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P33_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P33.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P33_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P33'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -905,6 +1156,23 @@ save_atom_rho_multipole_coeff.p3_1
 
 save_
 
+save_atom_rho_multipole_coeff.p3_1_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P3_1_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P3_1.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P3_1_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P3_1'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_coeff.p3_2
 
     _definition.id                '_atom_rho_multipole_coeff.P3_2'
@@ -918,6 +1186,23 @@ save_atom_rho_multipole_coeff.p3_2
     _name.object_id               P3_2
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_coeff}]
+
+save_
+
+save_atom_rho_multipole_coeff.p3_2_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P3_2_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P3_2.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P3_2_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P3_2'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -937,6 +1222,23 @@ save_atom_rho_multipole_coeff.p3_3
 
 save_
 
+save_atom_rho_multipole_coeff.p3_3_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P3_3_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P3_3.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P3_3_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P3_3'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_coeff.p40
 
     _definition.id                '_atom_rho_multipole_coeff.P40'
@@ -945,6 +1247,23 @@ save_atom_rho_multipole_coeff.p40
     _name.object_id               P40
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_coeff}]
+
+save_
+
+save_atom_rho_multipole_coeff.p40_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P40_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P40.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P40_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P40'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -959,6 +1278,23 @@ save_atom_rho_multipole_coeff.p41
 
 save_
 
+save_atom_rho_multipole_coeff.p41_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P41_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P41.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P41_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P41'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_coeff.p42
 
     _definition.id                '_atom_rho_multipole_coeff.P42'
@@ -967,6 +1303,23 @@ save_atom_rho_multipole_coeff.p42
     _name.object_id               P42
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_coeff}]
+
+save_
+
+save_atom_rho_multipole_coeff.p42_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P42_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P42.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P42_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P42'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -981,6 +1334,23 @@ save_atom_rho_multipole_coeff.p43
 
 save_
 
+save_atom_rho_multipole_coeff.p43_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P43_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P43.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P43_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P43'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_coeff.p44
 
     _definition.id                '_atom_rho_multipole_coeff.P44'
@@ -989,6 +1359,23 @@ save_atom_rho_multipole_coeff.p44
     _name.object_id               P44
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_coeff}]
+
+save_
+
+save_atom_rho_multipole_coeff.p44_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P44_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P44.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P44_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P44'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1008,6 +1395,23 @@ save_atom_rho_multipole_coeff.p4_1
 
 save_
 
+save_atom_rho_multipole_coeff.p4_1_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P4_1_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P4_1.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P4_1_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P4_1'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_coeff.p4_2
 
     _definition.id                '_atom_rho_multipole_coeff.P4_2'
@@ -1021,6 +1425,23 @@ save_atom_rho_multipole_coeff.p4_2
     _name.object_id               P4_2
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_coeff}]
+
+save_
+
+save_atom_rho_multipole_coeff.p4_2_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P4_2_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P4_2.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P4_2_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P4_2'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1040,6 +1461,23 @@ save_atom_rho_multipole_coeff.p4_3
 
 save_
 
+save_atom_rho_multipole_coeff.p4_3_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P4_3_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P4_3.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P4_3_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P4_3'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_coeff.p4_4
 
     _definition.id                '_atom_rho_multipole_coeff.P4_4'
@@ -1056,6 +1494,23 @@ save_atom_rho_multipole_coeff.p4_4
 
 save_
 
+save_atom_rho_multipole_coeff.p4_4_su
+
+    _definition.id                '_atom_rho_multipole_coeff.P4_4_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.P4_4.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               P4_4_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.P4_4'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_coeff.pc
 
     _definition.id                '_atom_rho_multipole_coeff.Pc'
@@ -1067,6 +1522,23 @@ save_atom_rho_multipole_coeff.pc
 
 save_
 
+save_atom_rho_multipole_coeff.pc_su
+
+    _definition.id                '_atom_rho_multipole_coeff.Pc_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.Pc.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               Pc_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.Pc'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_coeff.pv
 
     _definition.id                '_atom_rho_multipole_coeff.Pv'
@@ -1075,6 +1547,23 @@ save_atom_rho_multipole_coeff.pv
     _name.object_id               Pv
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_coeff}]
+
+save_
+
+save_atom_rho_multipole_coeff.pv_su
+
+    _definition.id                '_atom_rho_multipole_coeff.Pv_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_coeff.Pv.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               Pv_su
+    _name.linked_item_id          '_atom_rho_multipole_coeff.Pv'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1101,6 +1590,23 @@ save_atom_rho_multipole_kappa.base
     _name.object_id               base
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_kappa}]
+
+save_
+
+save_atom_rho_multipole_kappa.base_su
+
+    _definition.id                '_atom_rho_multipole_kappa.base_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_kappa.base.
+;
+    _name.category_id             atom_rho_multipole_kappa
+    _name.object_id               base_su
+    _name.linked_item_id          '_atom_rho_multipole_kappa.base'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1167,6 +1673,7 @@ save_atom_rho_multipole_kappa.list
     _type.container               List
     _type.dimension               '[6]'
     _type.contents                Real
+    _units.code                   none
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -1189,6 +1696,23 @@ save_atom_rho_multipole_kappa.prime0
 
 save_
 
+save_atom_rho_multipole_kappa.prime0_su
+
+    _definition.id                '_atom_rho_multipole_kappa.prime0_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_kappa.prime0.
+;
+    _name.category_id             atom_rho_multipole_kappa
+    _name.object_id               prime0_su
+    _name.linked_item_id          '_atom_rho_multipole_kappa.prime0'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_kappa.prime1
 
     _definition.id                '_atom_rho_multipole_kappa.prime1'
@@ -1197,6 +1721,23 @@ save_atom_rho_multipole_kappa.prime1
     _name.object_id               prime1
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_kappa}]
+
+save_
+
+save_atom_rho_multipole_kappa.prime1_su
+
+    _definition.id                '_atom_rho_multipole_kappa.prime1_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_kappa.prime1.
+;
+    _name.category_id             atom_rho_multipole_kappa
+    _name.object_id               prime1_su
+    _name.linked_item_id          '_atom_rho_multipole_kappa.prime1'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1211,6 +1752,23 @@ save_atom_rho_multipole_kappa.prime2
 
 save_
 
+save_atom_rho_multipole_kappa.prime2_su
+
+    _definition.id                '_atom_rho_multipole_kappa.prime2_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_kappa.prime2.
+;
+    _name.category_id             atom_rho_multipole_kappa
+    _name.object_id               prime2_su
+    _name.linked_item_id          '_atom_rho_multipole_kappa.prime2'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_kappa.prime3
 
     _definition.id                '_atom_rho_multipole_kappa.prime3'
@@ -1222,6 +1780,23 @@ save_atom_rho_multipole_kappa.prime3
 
 save_
 
+save_atom_rho_multipole_kappa.prime3_su
+
+    _definition.id                '_atom_rho_multipole_kappa.prime3_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_kappa.prime3.
+;
+    _name.category_id             atom_rho_multipole_kappa
+    _name.object_id               prime3_su
+    _name.linked_item_id          '_atom_rho_multipole_kappa.prime3'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_kappa.prime4
 
     _definition.id                '_atom_rho_multipole_kappa.prime4'
@@ -1230,6 +1805,23 @@ save_atom_rho_multipole_kappa.prime4
     _name.object_id               prime4
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_kappa}]
+
+save_
+
+save_atom_rho_multipole_kappa.prime4_su
+
+    _definition.id                '_atom_rho_multipole_kappa.prime4_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_kappa.prime4.
+;
+    _name.category_id             atom_rho_multipole_kappa
+    _name.object_id               prime4_su
+    _name.linked_item_id          '_atom_rho_multipole_kappa.prime4'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1322,6 +1914,7 @@ save_atom_rho_multipole_radial_slater.list
     _type.container               List
     _type.dimension               '[10]'
     _type.contents                Real
+    _units.code                   none
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -1332,6 +1925,26 @@ save_atom_rho_multipole_radial_slater.list
                                               s.n2, s.zeta2,
                                               s.n3, s.zeta3]
 ;
+
+save_
+
+save_atom_rho_multipole_radial_slater.list_su
+
+    _definition.id                '_atom_rho_multipole_radial_slater.list_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_radial_slater.list.
+;
+    _name.category_id             atom_rho_multipole_radial_slater
+    _name.object_id               list_su
+    _name.linked_item_id          '_atom_rho_multipole_radial_slater.list'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[10]'
+    _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -1346,6 +1959,23 @@ save_atom_rho_multipole_radial_slater.n0
 
 save_
 
+save_atom_rho_multipole_radial_slater.n0_su
+
+    _definition.id                '_atom_rho_multipole_radial_slater.n0_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_radial_slater.n0.
+;
+    _name.category_id             atom_rho_multipole_radial_slater
+    _name.object_id               n0_su
+    _name.linked_item_id          '_atom_rho_multipole_radial_slater.n0'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_radial_slater.n1
 
     _definition.id                '_atom_rho_multipole_radial_slater.n1'
@@ -1354,6 +1984,23 @@ save_atom_rho_multipole_radial_slater.n1
     _name.object_id               n1
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_slater}]
+
+save_
+
+save_atom_rho_multipole_radial_slater.n1_su
+
+    _definition.id                '_atom_rho_multipole_radial_slater.n1_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_radial_slater.n1.
+;
+    _name.category_id             atom_rho_multipole_radial_slater
+    _name.object_id               n1_su
+    _name.linked_item_id          '_atom_rho_multipole_radial_slater.n1'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1368,6 +2015,23 @@ save_atom_rho_multipole_radial_slater.n2
 
 save_
 
+save_atom_rho_multipole_radial_slater.n2_su
+
+    _definition.id                '_atom_rho_multipole_radial_slater.n2_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_radial_slater.n2.
+;
+    _name.category_id             atom_rho_multipole_radial_slater
+    _name.object_id               n2_su
+    _name.linked_item_id          '_atom_rho_multipole_radial_slater.n2'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_radial_slater.n3
 
     _definition.id                '_atom_rho_multipole_radial_slater.n3'
@@ -1376,6 +2040,23 @@ save_atom_rho_multipole_radial_slater.n3
     _name.object_id               n3
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_slater}]
+
+save_
+
+save_atom_rho_multipole_radial_slater.n3_su
+
+    _definition.id                '_atom_rho_multipole_radial_slater.n3_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_radial_slater.n3.
+;
+    _name.category_id             atom_rho_multipole_radial_slater
+    _name.object_id               n3_su
+    _name.linked_item_id          '_atom_rho_multipole_radial_slater.n3'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1390,6 +2071,23 @@ save_atom_rho_multipole_radial_slater.zeta0
 
 save_
 
+save_atom_rho_multipole_radial_slater.zeta0_su
+
+    _definition.id                '_atom_rho_multipole_radial_slater.zeta0_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_radial_slater.zeta0.
+;
+    _name.category_id             atom_rho_multipole_radial_slater
+    _name.object_id               zeta0_su
+    _name.linked_item_id          '_atom_rho_multipole_radial_slater.zeta0'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_radial_slater.zeta1
 
     _definition.id                '_atom_rho_multipole_radial_slater.zeta1'
@@ -1398,6 +2096,23 @@ save_atom_rho_multipole_radial_slater.zeta1
     _name.object_id               zeta1
 
     _import.get                   [{'file':templ_attr.cif  'save':rho_slater}]
+
+save_
+
+save_atom_rho_multipole_radial_slater.zeta1_su
+
+    _definition.id                '_atom_rho_multipole_radial_slater.zeta1_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_radial_slater.zeta1.
+;
+    _name.category_id             atom_rho_multipole_radial_slater
+    _name.object_id               zeta1_su
+    _name.linked_item_id          '_atom_rho_multipole_radial_slater.zeta1'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1412,6 +2127,23 @@ save_atom_rho_multipole_radial_slater.zeta2
 
 save_
 
+save_atom_rho_multipole_radial_slater.zeta2_su
+
+    _definition.id                '_atom_rho_multipole_radial_slater.zeta2_su'
+    _definition.update            2022-10-17
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_radial_slater.zeta2.
+;
+    _name.category_id             atom_rho_multipole_radial_slater
+    _name.object_id               zeta2_su
+    _name.linked_item_id          '_atom_rho_multipole_radial_slater.zeta2'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_rho_multipole_radial_slater.zeta3
 
     _definition.id                '_atom_rho_multipole_radial_slater.zeta3'
@@ -1423,19 +2155,36 @@ save_atom_rho_multipole_radial_slater.zeta3
 
 save_
 
-save_ATOM_SITE
+save_atom_rho_multipole_radial_slater.zeta3_su
 
-    _definition.id                ATOM_SITE
-    _definition.scope             Category
-    _definition.class             Loop
-    _definition.update            2013-09-08
+    _definition.id                '_atom_rho_multipole_radial_slater.zeta3_su'
+    _definition.update            2022-10-17
     _description.text
 ;
-    The CATEGORY of data items used to describe atom site information
-    used in crystallographic structure studies.
+    Standard uncertainty of _atom_rho_multipole_radial_slater.zeta3.
 ;
-    _name.category_id             RHO_GROUP
-    _name.object_id               ATOM_SITE
-    _category_key.name            '_atom_site.label'
+    _name.category_id             atom_rho_multipole_radial_slater
+    _name.object_id               zeta3_su
+    _name.linked_item_id          '_atom_rho_multipole_radial_slater.zeta3'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
+
+    loop_
+      _dictionary_audit.version
+      _dictionary_audit.date
+      _dictionary_audit.revision
+         2.0.1                    2014-06-20
+;
+       Initial conversion to DDLm (Syd Hall)
+;
+         2.0.2                    2019-04-03
+;
+       Update import statements, improve DDLm conformance.
+;
+         2.0.3                    2022-10-17
+;
+       Further improve DDLm conformance. Add missing su data names.
+;

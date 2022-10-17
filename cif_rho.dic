@@ -15,7 +15,10 @@ data_CIF_RHO
     _dictionary.version           2.0.3
     _dictionary.date              2022-10-17
     _dictionary.uri
-  https://raw.githubusercontent.com/COMCIFS/Electron_Density_Dictionary/master/cif_rho.dic
+;\
+    https://raw.githubusercontent.com/COMCIFS/Electron_Density_\
+    Dictionary/master/cif_rho.dic
+;
     _dictionary.ddl_conformance   3.13.1
     _dictionary.namespace         CifRho
     _description.text

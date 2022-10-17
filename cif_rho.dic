@@ -122,7 +122,7 @@ save_atom_local_axes.atom0
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -142,7 +142,7 @@ save_atom_local_axes.atom1
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -162,7 +162,7 @@ save_atom_local_axes.atom2
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -183,7 +183,7 @@ save_atom_local_axes.atom_label
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -347,7 +347,7 @@ save_atom_rho_multipole.atom_label
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -533,9 +533,10 @@ save_atom_rho_multipole.scat_core_table
     _name.object_id               scat_core_table
     _type.purpose                 Number
     _type.source                  Assigned
-    _type.container               Table
+    _type.container               Array
     _type.dimension               '[]'
     _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -605,9 +606,10 @@ save_atom_rho_multipole.scat_valence_table
     _name.object_id               scat_valence_table
     _type.purpose                 Number
     _type.source                  Assigned
-    _type.container               Table
+    _type.container               Array
     _type.dimension               '[]'
     _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -720,6 +722,7 @@ save_atom_rho_multipole_coeff.list
     _type.container               List
     _type.dimension               '[27]'
     _type.contents                Real
+    _units.code                   none
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -750,6 +753,7 @@ save_atom_rho_multipole_coeff.list_su
     _type.container               List
     _type.dimension               '[27]'
     _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -1665,6 +1669,7 @@ save_atom_rho_multipole_kappa.list
     _type.container               List
     _type.dimension               '[6]'
     _type.contents                Real
+    _units.code                   none
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -1905,6 +1910,7 @@ save_atom_rho_multipole_radial_slater.list
     _type.container               List
     _type.dimension               '[10]'
     _type.contents                Real
+    _units.code                   none
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -1934,6 +1940,7 @@ save_atom_rho_multipole_radial_slater.list_su
     _type.container               List
     _type.dimension               '[10]'
     _type.contents                Real
+    _units.code                   none
 
 save_
 

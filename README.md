@@ -1,3 +1,4 @@
+[![CIF syntax check](https://github.com/COMCIFS/Electron_Density_Dictionary/actions/workflows/main.yml/badge.svg)](https://github.com/COMCIFS/Electron_Density_Dictionary/actions)
 # Electron Density Dictionary (rhoCIF)
 
 CIF data name definitions for electron density

@@ -13,14 +13,14 @@ data_CIF_RHO
     _dictionary.title             Cif_rho
     _dictionary.class             Instance
     _dictionary.version           2.0.3
-    _dictionary.date              2022-10-17
+    _dictionary.date              2024-03-28
     _dictionary.uri
 ;\
 https://raw.githubusercontent.com/COMCIFS/Electron_Density_\
 Dictionary/master/cif_rho.dic
 ;
     _dictionary.ddl_conformance   3.13.1
-    _dictionary.namespace         CifRho
+    _dictionary.namespace         CifCore
     _description.text
 ;
     The CIF_RHO dictionary records the definitions of data items specifying
@@ -2184,7 +2184,9 @@ save_
 ;
        Update import statements, improve DDLm conformance.
 ;
-         2.0.3                    2022-10-17
+         2.0.3                    2024-03-28
 ;
        Further improve DDLm conformance. Add missing su data names.
+
+       Changed _dictionary.namespace from CifRho to CifCore (bm).
 ;

@@ -2190,5 +2190,5 @@ save_
 
        Changed _dictionary.namespace from CifRho to CifCore (bm).
 
-       Changed the content type of _atom_local_axes.ax* data items to 'Code'.
+       Changed the content type of _atom_local_axes.ax* data items to 'Word'.
 ;

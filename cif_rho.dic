@@ -1894,7 +1894,7 @@ save_atom_rho_multipole_radial_slater.atom_label
     ATOM_RHO_MULTIPOLE_RADIAL_SLATER and ATOM_RHO_MULTIPOLE categories are
     looped in separate lists.
 ;
-    _name.category_id             atom_rho_multipole_coeff_radial_slater
+    _name.category_id             atom_rho_multipole_radial_slater
     _name.object_id               atom_label
     _name.linked_item_id          '_atom_rho_multipole.atom_label'
     _type.purpose                 Link

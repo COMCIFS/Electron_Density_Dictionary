@@ -765,7 +765,7 @@ save_
 save_atom_rho_multipole_coeff.list_su
 
     _definition.id                '_atom_rho_multipole_coeff.list_su'
-    _definition.update            2022-10-17
+    _definition.update            2024-04-02
     _description.text
 ;
     Standard uncertainty of _atom_rho_multipole_coeff.list.
@@ -774,7 +774,7 @@ save_atom_rho_multipole_coeff.list_su
     _name.object_id               list_su
     _name.linked_item_id          '_atom_rho_multipole_coeff.list'
     _type.purpose                 SU
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               List
     _type.dimension               '[27]'
     _type.contents                Real
@@ -1995,7 +1995,7 @@ save_
 save_atom_rho_multipole_radial_slater.list_su
 
     _definition.id                '_atom_rho_multipole_radial_slater.list_su'
-    _definition.update            2022-10-17
+    _definition.update            2024-04-02
     _description.text
 ;
     Standard uncertainty of _atom_rho_multipole_radial_slater.list.
@@ -2004,7 +2004,7 @@ save_atom_rho_multipole_radial_slater.list_su
     _name.object_id               list_su
     _name.linked_item_id          '_atom_rho_multipole_radial_slater.list'
     _type.purpose                 SU
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               List
     _type.dimension               '[10]'
     _type.contents                Real
@@ -2259,4 +2259,7 @@ save_
        _atom_rho_multipole_coeff.atom_label,
        _atom_rho_multipole_kappa.atom_label and
        _atom_rho_multipole_radial_slater.atom_label data items. (AV)
+
+       Changed the source of the _atom_rho_multipole_coeff.list_su and
+       _atom_rho_multipole_radial_slater.list_su data items to 'Related'.
 ;

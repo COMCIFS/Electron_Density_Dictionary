@@ -13,7 +13,7 @@ data_CIF_RHO
     _dictionary.title             Cif_rho
     _dictionary.class             Instance
     _dictionary.version           2.0.3
-    _dictionary.date              2024-03-30
+    _dictionary.date              2024-04-02
     _dictionary.uri
 ;\
 https://raw.githubusercontent.com/COMCIFS/Electron_Density_\
@@ -651,14 +651,35 @@ save_ATOM_RHO_MULTIPOLE_COEFF
 
     _definition.id                ATOM_RHO_MULTIPOLE_COEFF
     _definition.scope             Category
-    _definition.class             Set
-    _definition.update            2014-06-20
+    _definition.class             Loop
+    _definition.update            2024-04-02
     _description.text
 ;
     Category defining multipole population coefficients P(l,m).
 ;
     _name.category_id             ATOM_RHO_MULTIPOLE
     _name.object_id               ATOM_RHO_MULTIPOLE_COEFF
+    _category_key.name            '_atom_rho_multipole_coeff.atom_label'
+
+save_
+
+save_atom_rho_multipole_coeff.atom_label
+
+    _definition.id                '_atom_rho_multipole_coeff.atom_label'
+    _definition.update            2024-04-02
+    _description.text
+;
+    An atom site label that serves as the ATOM_RHO_MULTIPOLE_COEFF category key.
+    It should only be used when items from the ATOM_RHO_MULTIPOLE_COEFF and
+    ATOM_RHO_MULTIPOLE categories are looped in separate lists.
+;
+    _name.category_id             atom_rho_multipole_coeff
+    _name.object_id               atom_label
+    _name.linked_item_id          '_atom_rho_multipole.atom_label'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -744,7 +765,7 @@ save_
 save_atom_rho_multipole_coeff.list_su
 
     _definition.id                '_atom_rho_multipole_coeff.list_su'
-    _definition.update            2022-10-17
+    _definition.update            2024-04-02
     _description.text
 ;
     Standard uncertainty of _atom_rho_multipole_coeff.list.
@@ -753,7 +774,7 @@ save_atom_rho_multipole_coeff.list_su
     _name.object_id               list_su
     _name.linked_item_id          '_atom_rho_multipole_coeff.list'
     _type.purpose                 SU
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               List
     _type.dimension               '[27]'
     _type.contents                Real
@@ -1571,14 +1592,35 @@ save_ATOM_RHO_MULTIPOLE_KAPPA
 
     _definition.id                ATOM_RHO_MULTIPOLE_KAPPA
     _definition.scope             Category
-    _definition.class             Set
-    _definition.update            2014-06-20
+    _definition.class             Loop
+    _definition.update            2024-04-02
     _description.text
 ;
     Category defining radial function expansion-contraction coefficients
 ;
     _name.category_id             ATOM_RHO_MULTIPOLE
     _name.object_id               ATOM_RHO_MULTIPOLE_KAPPA
+    _category_key.name            '_atom_rho_multipole_kappa.atom_label'
+
+save_
+
+save_atom_rho_multipole_kappa.atom_label
+
+    _definition.id                '_atom_rho_multipole_kappa.atom_label'
+    _definition.update            2024-04-02
+    _description.text
+;
+    An atom site label that serves as the ATOM_RHO_MULTIPOLE_KAPPA category key.
+    It should only be used when items from the ATOM_RHO_MULTIPOLE_KAPPA and
+    ATOM_RHO_MULTIPOLE categories are looped in separate lists.
+;
+    _name.category_id             atom_rho_multipole_kappa
+    _name.object_id               atom_label
+    _name.linked_item_id          '_atom_rho_multipole.atom_label'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -1829,14 +1871,36 @@ save_ATOM_RHO_MULTIPOLE_RADIAL_SLATER
 
     _definition.id                ATOM_RHO_MULTIPOLE_RADIAL_SLATER
     _definition.scope             Category
-    _definition.class             Set
-    _definition.update            2014-06-20
+    _definition.class             Loop
+    _definition.update            2024-04-02
     _description.text
 ;
     Category defining multipole population coefficients P(l,m).
 ;
     _name.category_id             ATOM_RHO_MULTIPOLE
     _name.object_id               ATOM_RHO_MULTIPOLE_RADIAL_SLATER
+    _category_key.name            '_atom_rho_multipole_radial_slater.atom_label'
+
+save_
+
+save_atom_rho_multipole_radial_slater.atom_label
+
+    _definition.id                '_atom_rho_multipole_radial_slater.atom_label'
+    _definition.update            2024-04-02
+    _description.text
+;
+    An atom site label that serves as the ATOM_RHO_MULTIPOLE_RADIAL_SLATE
+    category key. It should only be used when items from the
+    ATOM_RHO_MULTIPOLE_RADIAL_SLATER and ATOM_RHO_MULTIPOLE categories are
+    looped in separate lists.
+;
+    _name.category_id             atom_rho_multipole_radial_slater
+    _name.object_id               atom_label
+    _name.linked_item_id          '_atom_rho_multipole.atom_label'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -1931,7 +1995,7 @@ save_
 save_atom_rho_multipole_radial_slater.list_su
 
     _definition.id                '_atom_rho_multipole_radial_slater.list_su'
-    _definition.update            2022-10-17
+    _definition.update            2024-04-02
     _description.text
 ;
     Standard uncertainty of _atom_rho_multipole_radial_slater.list.
@@ -1940,7 +2004,7 @@ save_atom_rho_multipole_radial_slater.list_su
     _name.object_id               list_su
     _name.linked_item_id          '_atom_rho_multipole_radial_slater.list'
     _type.purpose                 SU
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               List
     _type.dimension               '[10]'
     _type.contents                Real
@@ -2184,11 +2248,20 @@ save_
 ;
        Update import statements, improve DDLm conformance.
 ;
-         2.0.3                    2024-03-30
+         2.0.3                    2024-04-02
 ;
        Further improve DDLm conformance. Add missing su data names.
 
        Changed _dictionary.namespace from CifRho to CifCore (bm).
+
+       Declared the ATOM_RHO_MULTIPOLE_COEFF, ATOM_RHO_MULTIPOLE_KAPPA and
+       ATOM_RHO_MULTIPOLE_RADIAL_SLATER categories as looped. Added the
+       _atom_rho_multipole_coeff.atom_label,
+       _atom_rho_multipole_kappa.atom_label and
+       _atom_rho_multipole_radial_slater.atom_label data items. (AV)
+
+       Changed the source of the _atom_rho_multipole_coeff.list_su and
+       _atom_rho_multipole_radial_slater.list_su data items to 'Related'.
 
        Changed the content type of _atom_local_axes.ax* data items to 'Word'.
 ;

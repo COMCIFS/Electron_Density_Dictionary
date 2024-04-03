@@ -19,7 +19,7 @@ data_CIF_RHO
 https://raw.githubusercontent.com/COMCIFS/Electron_Density_\
 Dictionary/master/cif_rho.dic
 ;
-    _dictionary.ddl_conformance   3.13.1
+    _dictionary.ddl_conformance   4.1.0
     _dictionary.namespace         CifCore
     _description.text
 ;
@@ -195,7 +195,7 @@ save_atom_local_axes.ax1
 
     _definition.id                '_atom_local_axes.ax1'
     _alias.definition_id          '_atom_local_axes_ax1'
-    _definition.update            2014-06-20
+    _definition.update            2024-03-30
     _description.text
 ;
     Specifies 'ax1' in the definition of a local axis frame.
@@ -222,7 +222,7 @@ save_atom_local_axes.ax1
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     loop_
       _enumeration_set.state
@@ -251,7 +251,7 @@ save_atom_local_axes.ax2
 
     _definition.id                '_atom_local_axes.ax2'
     _alias.definition_id          '_atom_local_axes_ax2'
-    _definition.update            2014-06-20
+    _definition.update            2024-03-30
     _description.text
 ;
     Specifies 'ax2' in the definition of a local axis frame.
@@ -262,7 +262,7 @@ save_atom_local_axes.ax2
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     loop_
       _enumeration_set.state
@@ -2262,4 +2262,6 @@ save_
 
        Changed the source of the _atom_rho_multipole_coeff.list_su and
        _atom_rho_multipole_radial_slater.list_su data items to 'Related'.
+
+       Changed the content type of _atom_local_axes.ax* data items to 'Word'.
 ;

@@ -13,13 +13,13 @@ data_CIF_RHO
     _dictionary.title             Cif_rho
     _dictionary.class             Instance
     _dictionary.version           2.0.3
-    _dictionary.date              2024-03-28
+    _dictionary.date              2024-03-30
     _dictionary.uri
 ;\
 https://raw.githubusercontent.com/COMCIFS/Electron_Density_\
 Dictionary/master/cif_rho.dic
 ;
-    _dictionary.ddl_conformance   3.13.1
+    _dictionary.ddl_conformance   4.1.0
     _dictionary.namespace         CifCore
     _description.text
 ;
@@ -195,7 +195,7 @@ save_atom_local_axes.ax1
 
     _definition.id                '_atom_local_axes.ax1'
     _alias.definition_id          '_atom_local_axes_ax1'
-    _definition.update            2014-06-20
+    _definition.update            2024-03-30
     _description.text
 ;
     Specifies 'ax1' in the definition of a local axis frame.
@@ -222,7 +222,7 @@ save_atom_local_axes.ax1
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     loop_
       _enumeration_set.state
@@ -251,7 +251,7 @@ save_atom_local_axes.ax2
 
     _definition.id                '_atom_local_axes.ax2'
     _alias.definition_id          '_atom_local_axes_ax2'
-    _definition.update            2014-06-20
+    _definition.update            2024-03-30
     _description.text
 ;
     Specifies 'ax2' in the definition of a local axis frame.
@@ -262,7 +262,7 @@ save_atom_local_axes.ax2
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     loop_
       _enumeration_set.state
@@ -2184,9 +2184,11 @@ save_
 ;
        Update import statements, improve DDLm conformance.
 ;
-         2.0.3                    2024-03-28
+         2.0.3                    2024-03-30
 ;
        Further improve DDLm conformance. Add missing su data names.
 
        Changed _dictionary.namespace from CifRho to CifCore (bm).
+
+       Changed the content type of _atom_local_axes.ax* data items to 'Word'.
 ;

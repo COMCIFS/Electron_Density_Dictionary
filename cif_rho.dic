@@ -1712,7 +1712,7 @@ save_atom_rho_multipole_kappa.list
 ;
     _name.category_id             atom_rho_multipole_kappa
     _name.object_id               list
-    _type.purpose                 Number
+    _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               List
     _type.dimension               '[6]'
@@ -1926,110 +1926,6 @@ save_atom_rho_multipole_radial_slater.atom_label
 
 save_
 
-save_atom_rho_multipole_radial_slater.n_list
-
-    _definition.id                '_atom_rho_multipole_radial_slater.n_list'
-    _alias.definition_id          '_atom_rho_multipole_radial_slater_n_list'
-    _definition.update            2024-04-23
-    _description.text
-;
-    These items are used when the radial dependence of the valence
-    electron  density, R(kappa'(l),l,r), of the atom specified in
-    atom_rho_multipole.atom_label is expressed as a Slater-type
-    function [Hansen & Coppens (1978), equation (3)]:
-
-    R(kappa'(l),l,r) = [{zeta(l)\}^\{n(l)+3\}^/\{n(l)+2\}!]\
-                        *(kappa'(l)*r)^n(l)^
-                        *exp(-kappa'(l)*zeta(l)*r)
-
-    where:
-      kappa'(l)  = atom_rho_multipole_kappa.prime[l]
-      n(l)       = atom_rho_multipole_radial_slater.n[l]
-      zeta(l)i   = atom_rho_multipole_radial_slater.zeta[l]
-
-    R(kappa'(l),l,r) appears in the multipole formalism described by
-    Hansen & Coppens [1978, equation (2)] which gives the
-    electron density at position vector r with respect to an
-    atomic nucleus as:
-
-    rho(r) = Pc*rho_core(r) + Pv*kappa^3^*rho_valence(kappa*r)
-            + sum{k'(l)^3^*R(kappa'(l),l,r)\}\
-              *sum{P(l,m)*d(l,m,theta,phi)\}\
-
-    where:
-      Pc     = atom_rho_multipole_coeff.Pc
-      Pv     = atom_rho_multipole_coeff.Pv
-      P(0,0) = atom_rho_multipole_coeff.P00
-      Pc + Pv + P(0,0) = Z (the atomic number) for a neutral atom
-
-      kappa      = atom_rho_multipole_kappa.base,
-      kappa'(l)  = atom_rho_multipole_kappa.prime[l],
-      P(l,m)     = atom_rho_multipole_coeff.P[lm],
-
-      d(l,m,theta,phi) is the spherical harmonic of order l,m at the
-      position (theta, phi) with respect to spherical coordinates
-      centred on the atom.
-
-      The summations are performed over the index ranges
-      0 <= l <= lmax, -l <= m <= l respectively, where lmax is
-      the highest order of multipole applied.
-
-      The spherical coordinates are related to the local Cartesian
-      axes defined in category ATOM_LOCAL_AXES, z is the polar axis
-      from which the angle theta is measured, and the angle phi is
-      measured from the x axis in the xy plane with the y axis
-      having a value of phi = +90 degrees.
-
-      rho_core(r) and rho_valence(kappa*r) are the spherical core and
-      valence densities, respectively. They are obtained from
-      atomic orbital analytic wavefunctions such as those tabulated
-      by Clementi & Roetti (1974). They are also the Fourier
-      transforms of the X-ray scattering factors given in
-      atom_rho_multipole.scat_core and
-      atom_rho_multipole.scat_valence.
-
-    Ref:  Clementi, E. & Roetti, C. (1974). At. Data Nucl. Data
-            Tables, 14, 177-478.
-          Hansen, N. K. & Coppens, P.  (1978).
-            Acta Cryst. A34, 909-921.
-;
-    _name.category_id             atom_rho_multipole_radial_slater
-    _name.object_id               list
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               List
-    _type.dimension               '[5]'
-    _type.contents                Real
-    _units.code                   none
-    _method.purpose               Evaluation
-    _method.expression
-;
-    With s  as  atom_rho_multipole_radial_slater
-
-    atom_rho_multipole_radial_slater.n_list = [ s.n0, s.n1, s.n2, s.n3 ]
-;
-
-save_
-
-save_atom_rho_multipole_radial_slater.n_list_su
-
-    _definition.id                '_atom_rho_multipole_radial_slater.n_list_su'
-    _definition.update            2024-04-23
-    _description.text
-;
-    Standard uncertainty of _atom_rho_multipole_radial_slater.n_list.
-;
-    _name.category_id             atom_rho_multipole_radial_slater
-    _name.object_id               list_su
-    _name.linked_item_id          '_atom_rho_multipole_radial_slater.n_list'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               List
-    _type.dimension               '[5]'
-    _type.contents                Real
-    _units.code                   none
-
-save_
 
 save_atom_rho_multipole_radial_slater.n0
 
@@ -2143,10 +2039,10 @@ save_atom_rho_multipole_radial_slater.n3_su
 
 save_
 
-save_atom_rho_multipole_radial_slater.zeta_list
+save_atom_rho_multipole_radial_slater.n_list
 
-    _definition.id                '_atom_rho_multipole_radial_slater.zeta_list'
-    _alias.definition_id          '_atom_rho_multipole_radial_slater_zeta_list'
+    _definition.id                '_atom_rho_multipole_radial_slater.n_list'
+    _alias.definition_id          '_atom_rho_multipole_radial_slater_n_list'
     _definition.update            2024-04-23
     _description.text
 ;
@@ -2211,7 +2107,7 @@ save_atom_rho_multipole_radial_slater.zeta_list
             Acta Cryst. A34, 909-921.
 ;
     _name.category_id             atom_rho_multipole_radial_slater
-    _name.object_id               list
+    _name.object_id               n_list
     _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               List
@@ -2223,23 +2119,22 @@ save_atom_rho_multipole_radial_slater.zeta_list
 ;
     With s  as  atom_rho_multipole_radial_slater
 
-    atom_rho_multipole_radial_slater.zeta_list = [
-                    s.zeta0, s.zeta1, s.zeta2, s.zeta3]
+    atom_rho_multipole_radial_slater.n_list = [ s.n0, s.n1, s.n2, s.n3 ]
 ;
 
 save_
 
-save_atom_rho_multipole_radial_slater.zeta_list_su
+save_atom_rho_multipole_radial_slater.n_list_su
 
-    _definition.id                '_atom_rho_multipole_radial_slater.zeta_list_su'
+    _definition.id                '_atom_rho_multipole_radial_slater.n_list_su'
     _definition.update            2024-04-23
     _description.text
 ;
-    Standard uncertainty of _atom_rho_multipole_radial_slater.zeta_list.
+    Standard uncertainty of _atom_rho_multipole_radial_slater.n_list.
 ;
     _name.category_id             atom_rho_multipole_radial_slater
-    _name.object_id               list_su
-    _name.linked_item_id          '_atom_rho_multipole_radial_slater.zeta_list'
+    _name.object_id               n_list_su
+    _name.linked_item_id          '_atom_rho_multipole_radial_slater.n_list'
     _type.purpose                 SU
     _type.source                  Related
     _type.container               List
@@ -2358,6 +2253,112 @@ save_atom_rho_multipole_radial_slater.zeta3_su
     _units.code                   none
 
     _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
+save_atom_rho_multipole_radial_slater.zeta_list
+
+    _definition.id                '_atom_rho_multipole_radial_slater.zeta_list'
+    _alias.definition_id          '_atom_rho_multipole_radial_slater_zeta_list'
+    _definition.update            2024-04-23
+    _description.text
+;
+    These items are used when the radial dependence of the valence
+    electron  density, R(kappa'(l),l,r), of the atom specified in
+    atom_rho_multipole.atom_label is expressed as a Slater-type
+    function [Hansen & Coppens (1978), equation (3)]:
+
+    R(kappa'(l),l,r) = [{zeta(l)\}^\{n(l)+3\}^/\{n(l)+2\}!]\
+                        *(kappa'(l)*r)^n(l)^
+                        *exp(-kappa'(l)*zeta(l)*r)
+
+    where:
+      kappa'(l)  = atom_rho_multipole_kappa.prime[l]
+      n(l)       = atom_rho_multipole_radial_slater.n[l]
+      zeta(l)i   = atom_rho_multipole_radial_slater.zeta[l]
+
+    R(kappa'(l),l,r) appears in the multipole formalism described by
+    Hansen & Coppens [1978, equation (2)] which gives the
+    electron density at position vector r with respect to an
+    atomic nucleus as:
+
+    rho(r) = Pc*rho_core(r) + Pv*kappa^3^*rho_valence(kappa*r)
+            + sum{k'(l)^3^*R(kappa'(l),l,r)\}\
+              *sum{P(l,m)*d(l,m,theta,phi)\}\
+
+    where:
+      Pc     = atom_rho_multipole_coeff.Pc
+      Pv     = atom_rho_multipole_coeff.Pv
+      P(0,0) = atom_rho_multipole_coeff.P00
+      Pc + Pv + P(0,0) = Z (the atomic number) for a neutral atom
+
+      kappa      = atom_rho_multipole_kappa.base,
+      kappa'(l)  = atom_rho_multipole_kappa.prime[l],
+      P(l,m)     = atom_rho_multipole_coeff.P[lm],
+
+      d(l,m,theta,phi) is the spherical harmonic of order l,m at the
+      position (theta, phi) with respect to spherical coordinates
+      centred on the atom.
+
+      The summations are performed over the index ranges
+      0 <= l <= lmax, -l <= m <= l respectively, where lmax is
+      the highest order of multipole applied.
+
+      The spherical coordinates are related to the local Cartesian
+      axes defined in category ATOM_LOCAL_AXES, z is the polar axis
+      from which the angle theta is measured, and the angle phi is
+      measured from the x axis in the xy plane with the y axis
+      having a value of phi = +90 degrees.
+
+      rho_core(r) and rho_valence(kappa*r) are the spherical core and
+      valence densities, respectively. They are obtained from
+      atomic orbital analytic wavefunctions such as those tabulated
+      by Clementi & Roetti (1974). They are also the Fourier
+      transforms of the X-ray scattering factors given in
+      atom_rho_multipole.scat_core and
+      atom_rho_multipole.scat_valence.
+
+    Ref:  Clementi, E. & Roetti, C. (1974). At. Data Nucl. Data
+            Tables, 14, 177-478.
+          Hansen, N. K. & Coppens, P.  (1978).
+            Acta Cryst. A34, 909-921.
+;
+    _name.category_id             atom_rho_multipole_radial_slater
+    _name.object_id               zeta_list
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[5]'
+    _type.contents                Real
+    _units.code                   none
+    _method.purpose               Evaluation
+    _method.expression
+;
+    With s  as  atom_rho_multipole_radial_slater
+
+    atom_rho_multipole_radial_slater.zeta_list = [
+                    s.zeta0, s.zeta1, s.zeta2, s.zeta3]
+;
+
+save_
+
+save_atom_rho_multipole_radial_slater.zeta_list_su
+
+    _definition.id                '_atom_rho_multipole_radial_slater.zeta_list_su'
+    _definition.update            2024-04-23
+    _description.text
+;
+    Standard uncertainty of _atom_rho_multipole_radial_slater.zeta_list.
+;
+    _name.category_id             atom_rho_multipole_radial_slater
+    _name.object_id               zeta_list_su
+    _name.linked_item_id          '_atom_rho_multipole_radial_slater.zeta_list'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               List
+    _type.dimension               '[5]'
+    _type.contents                Real
+    _units.code                   none
 
 save_
 

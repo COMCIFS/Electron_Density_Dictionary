@@ -1926,7 +1926,6 @@ save_atom_rho_multipole_radial_slater.atom_label
 
 save_
 
-
 save_atom_rho_multipole_radial_slater.n0
 
     _definition.id                '_atom_rho_multipole_radial_slater.n0'
@@ -2344,7 +2343,8 @@ save_
 
 save_atom_rho_multipole_radial_slater.zeta_list_su
 
-    _definition.id                '_atom_rho_multipole_radial_slater.zeta_list_su'
+    _definition.id
+        '_atom_rho_multipole_radial_slater.zeta_list_su'
     _definition.update            2024-04-23
     _description.text
 ;
@@ -2398,6 +2398,6 @@ save_
        Changed _atom_rho_multipole_radial_slater.list to
        _atom_rho_multipole_radial_slater.n_list and
        _atom_rho_multipole_radial_slater.zeta_list to clarify ordering
-       within separate lists. 
+       within separate lists.
        (bm)
 ;

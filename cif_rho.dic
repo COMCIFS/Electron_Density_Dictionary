@@ -13,7 +13,7 @@ data_CIF_RHO
     _dictionary.title             CIF_RHO
     _dictionary.class             Instance
     _dictionary.version           2.0.3
-    _dictionary.date              2024-04-02
+    _dictionary.date              2024-04-23
     _dictionary.uri
 ;\
 https://raw.githubusercontent.com/COMCIFS/Electron_Density_\
@@ -1875,7 +1875,11 @@ save_ATOM_RHO_MULTIPOLE_RADIAL_SLATER
     _definition.update            2024-04-02
     _description.text
 ;
-    Category defining multipole population coefficients P(l,m).
+    Category containing the terms of a Slater-type function representation
+    of the radial dependence of the electron density, R(kappa'(l),l,r),
+    according to the formalism of Hansen & Coppens (1978), equation (3).
+
+    Ref: Hansen, N. K. & Coppens, P. (1978). Acta Cryst. A34, 909-921.
 ;
     _name.category_id             ATOM_RHO_MULTIPOLE
     _name.object_id               ATOM_RHO_MULTIPOLE_RADIAL_SLATER
@@ -1889,7 +1893,7 @@ save_atom_rho_multipole_radial_slater.atom_label
     _definition.update            2024-04-02
     _description.text
 ;
-    An atom site label that serves as the ATOM_RHO_MULTIPOLE_RADIAL_SLATE
+    An atom site label that serves as the ATOM_RHO_MULTIPOLE_RADIAL_SLATER
     category key. It should only be used when items from the
     ATOM_RHO_MULTIPOLE_RADIAL_SLATER and ATOM_RHO_MULTIPOLE categories are
     looped in separate lists.
@@ -2248,7 +2252,7 @@ save_
 ;
        Update import statements, improve DDLm conformance.
 ;
-         2.0.3                    2024-04-02
+         2.0.3                    2024-04-23
 ;
        Further improve DDLm conformance. Add missing su data names.
 

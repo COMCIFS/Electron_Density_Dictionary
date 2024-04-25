@@ -105,7 +105,7 @@ save_atom_local_axes.atom0
     The definition employs three atom-site labels, 'atom0', 'atom1'
     and 'atom2', and two axis labels, 'ax1' and 'ax2', having values
     '+/-X', '+/-Y' or '+/-Z'. For the atom defined by
-    '_atom_local_axes.atom_label', whose nuclear position is taken
+    _atom_local_axes.atom_label, whose nuclear position is taken
     as the origin, local axis 'ax1' is the vector from the origin to
     atom0, axis 'ax2' is perpendicular to 'ax1' and lies in the
     plane of 'ax1' and a vector
@@ -202,7 +202,7 @@ save_atom_local_axes.ax1
     The definition employs three atom-site labels, 'atom0', 'atom1'
     and 'atom2', and two axis labels, 'ax1' and 'ax2', having values
     '+/-X', '+/-Y' or '+/-Z'. For the atom defined by
-    '_atom_local_axes.atom_label', whose nuclear position is taken
+    _atom_local_axes.atom_label, whose nuclear position is taken
     as the origin, local axis 'ax1' is the vector from the origin to
     atom0, axis 'ax2' is perpendicular to 'ax1' and lies in the
     plane of 'ax1' and a vector

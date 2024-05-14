@@ -13,7 +13,7 @@ data_CIF_RHO
     _dictionary.title             CIF_RHO
     _dictionary.class             Instance
     _dictionary.version           2.0.3
-    _dictionary.date              2024-04-23
+    _dictionary.date              2024-05-14
     _dictionary.uri
 ;\
 https://raw.githubusercontent.com/COMCIFS/Electron_Density_\
@@ -33,7 +33,7 @@ save_RHO_GROUP
     _definition.id                RHO_GROUP
     _definition.scope             Category
     _definition.class             Head
-    _definition.update            2022-10-17
+    _definition.update            2024-05-14
     _description.text
 ;
     Groups all of the categories of definitions in the study of
@@ -43,7 +43,7 @@ save_RHO_GROUP
     _name.object_id               RHO_GROUP
 
     _import.get
-        [{'dupl':Ignore  'file':cif_core.dic  'mode':Full  'save':CIF_CORE}]
+        [{'dupl':Ignore  'file':cif_core.dic  'mode':Full  'save':HEAD}]
 
 save_
 
@@ -2378,7 +2378,7 @@ save_
 ;
        Update import statements, improve DDLm conformance.
 ;
-         2.0.3                    2024-04-23
+         2.0.3                    2024-05-14
 ;
        Further improve DDLm conformance. Add missing su data names.
 
@@ -2404,4 +2404,8 @@ save_
        _atom_rho_multipole_radial_slater.zeta_list to clarify ordering
        within separate lists.
        (bm)
+
+       Updated the CIF_CORE dictionary import statement with the new Head
+       category name.
+       (av)
 ;

@@ -14,7 +14,7 @@ on:
     branches: [ master ]
     paths-ignore:
             - '.github/**'
-  workflow_dispatch:   
+  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -45,7 +45,7 @@ jobs:
                  key: ${{ runner.os }}-julia-v2
                  
       - name: Install Julia
-        uses: julia-actions/setup-julia@v1
+        uses: julia-actions/setup-julia@v2
         with:
                 version: '1.6'
 

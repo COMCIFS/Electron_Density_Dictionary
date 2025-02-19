@@ -3,15 +3,15 @@
 name: CIFSyntaxandStyleCheck
 
 # Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+# events but only for the main branch
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths-ignore:
             - '.github/**'
 
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths-ignore:
             - '.github/**'
   workflow_dispatch:
@@ -63,7 +63,7 @@ jobs:
                 repository: jamesrhester/julia_cif_tools
                 path: julia_cif_tools
 
-      - name: Checkout CIF master files
+      - name: Checkout CIF_CORE main branch files
         uses: actions/checkout@v4
         with:
                 repository: COMCIFS/cif_core

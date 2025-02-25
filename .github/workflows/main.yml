@@ -3,18 +3,18 @@
 name: CIFSyntaxandStyleCheck
 
 # Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+# events but only for the main branch
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths-ignore:
             - '.github/**'
 
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths-ignore:
             - '.github/**'
-  workflow_dispatch:   
+  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -38,14 +38,14 @@ jobs:
 
     steps:
       - name: Get the cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         id: cache
         with:
                  path: ~/.julia
                  key: ${{ runner.os }}-julia-v2
                  
       - name: Install Julia
-        uses: julia-actions/setup-julia@v1
+        uses: julia-actions/setup-julia@v2
         with:
                 version: '1.6'
 
@@ -63,7 +63,7 @@ jobs:
                 repository: jamesrhester/julia_cif_tools
                 path: julia_cif_tools
 
-      - name: Checkout CIF master files
+      - name: Checkout CIF_CORE main branch files
         uses: actions/checkout@v4
         with:
                 repository: COMCIFS/cif_core

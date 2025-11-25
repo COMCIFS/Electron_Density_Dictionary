@@ -1,4 +1,5 @@
 #\#CIF_2.0
+# SPDX-License-Identifier: CC-BY-4.0
 ######################################################################
 #                                                                    #
 #         CIF Dictionary for the Multipole Model of                  #
@@ -13,13 +14,13 @@ data_CIF_RHO
     _dictionary.title             CIF_RHO
     _dictionary.class             Instance
     _dictionary.version           2.0.3
-    _dictionary.date              2024-05-15
+    _dictionary.date              2025-11-25
     _dictionary.uri
 ;\
 https://raw.githubusercontent.com/COMCIFS/Electron_Density_\
 Dictionary/master/cif_rho.dic
 ;
-    _dictionary.ddl_conformance   4.1.0
+    _dictionary.ddl_conformance   4.2.0
     _dictionary.namespace         CifCore
     _description.text
 ;
@@ -28,19 +29,19 @@ Dictionary/master/cif_rho.dic
     used with in the Crystallographic Information Framework (CIF).
 ;
 
-save_RHO_GROUP
+save_CIF_RHO_HEAD
 
-    _definition.id                RHO_GROUP
+    _definition.id                CIF_RHO_HEAD
     _definition.scope             Category
     _definition.class             Head
-    _definition.update            2024-05-15
+    _definition.update            2025-11-25
     _description.text
 ;
     Groups all of the categories of definitions in the study of
     multipole modeling of aspherical atomic density distributions
 ;
     _name.category_id             CIF_RHO
-    _name.object_id               RHO_GROUP
+    _name.object_id               CIF_RHO_HEAD
 
     _import.get
         [
@@ -90,7 +91,7 @@ save_ATOM_LOCAL_AXES
           Koritsanszky, T. S. & Coppens, P. (2001). Chem. Rev. 101,
             1583-1621.
 ;
-    _name.category_id             RHO_GROUP
+    _name.category_id             CIF_RHO_HEAD
     _name.object_id               ATOM_LOCAL_AXES
     _category_key.name            '_atom_local_axes.atom_label'
 
@@ -329,7 +330,7 @@ save_ATOM_RHO_MULTIPOLE
           Hansen, N. K. & Coppens, P.  (1978). Acta Cryst. A34, 909-921.
           Koritsanszky, T. S. & Coppens, P. (2001). Chem. Rev. 101, 1583-1621.
 ;
-    _name.category_id             RHO_GROUP
+    _name.category_id             CIF_RHO_HEAD
     _name.object_id               ATOM_RHO_MULTIPOLE
     _category_key.name            '_atom_rho_multipole.atom_label'
 
@@ -2380,7 +2381,7 @@ save_
 ;
        Update import statements, improve DDLm conformance.
 ;
-         2.0.3                    2024-05-15
+         2.0.3                    2025-11-25
 ;
        Further improve DDLm conformance. Add missing su data names.
 
@@ -2410,4 +2411,6 @@ save_
        Updated the CIF_CORE dictionary import statement with the new Head
        category name.
        (av)
+
+       Changed name of Head category in accordance with convention. (bm)
 ;

@@ -14,7 +14,7 @@ data_CIF_RHO
     _dictionary.title             CIF_RHO
     _dictionary.class             Instance
     _dictionary.version           2.0.3
-    _dictionary.date              2025-11-25
+    _dictionary.date              2026-01-19
     _dictionary.uri
 ;\
 https://raw.githubusercontent.com/COMCIFS/Electron_Density_\
@@ -2381,7 +2381,7 @@ save_
 ;
        Update import statements, improve DDLm conformance.
 ;
-         2.0.3                    2025-11-25
+         2.0.3                    2026-01-19
 ;
        Further improve DDLm conformance. Add missing su data names.
 
